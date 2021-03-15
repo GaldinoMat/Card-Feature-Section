@@ -16,7 +16,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 400;
   background-color: var(--very-light-gray);
   display: flex;
@@ -36,8 +36,8 @@ p {
 }
 
 .container {
-  width: 300px;
-  margin: 50px 0;
+  width: 18.75rem;
+  margin: 3.125rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +53,7 @@ p {
 }
 
 .titles {
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 
 .cards-container {
@@ -61,7 +61,7 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 30px 0px;
+  gap: 1.875rem 0rem;
   grid-template-areas:
     "supervisor-card"
     "team-builder-card"
@@ -70,9 +70,11 @@ p {
 }
 
 .card {
-  padding: 1.25rem 1.5625rem 0 1.5625rem;
-  box-shadow: 0px 10px 45px -20px rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
+  padding: 1.25rem 1.5625rem 1.25rem 1.5625rem;
+  box-shadow: 0rem 0.625rem 2.8125rem -1.25rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.3125rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .card .card-text {
@@ -87,28 +89,36 @@ p {
   grid-area: supervisor-card;
   border-top: solid 0.25rem var(--cyan-color);
 }
+
 .team-builder-card {
   grid-area: team-builder-card;
   border-top: solid 0.25rem var(--red-color);
 }
+
 .karma-card {
   grid-area: karma-card;
   border-top: solid 0.25rem var(--orange-color);
 }
+
 .calculator-card {
   grid-area: calculator-card;
   border-top: solid 0.25rem var(--blue-color);
 }
 
+.supervisor-card .card-img,
+.karma-card .card-img,
+.calculator-card .card-img {
+  transform: translateY(25%);
+}
+
 @media (min-width: 768px) {
   .container {
     width: 37.5rem;
-    margin: 1.5625rem 0;
   }
 
   .cards-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 25px 25px;
+    gap: 1.5625rem 1.5625rem;
     grid-template-areas:
       "supervisor-card supervisor-card team-builder-card team-builder-card"
       "supervisor-card supervisor-card team-builder-card team-builder-card"
@@ -116,8 +126,8 @@ p {
       "karma-card karma-card calculator-card calculator-card";
   }
 
-  .card {
-    padding-bottom: 1.25rem;
+  .calculator-card .card-img {
+    transform: translateY(0);
   }
 }
 
@@ -142,5 +152,10 @@ p {
       "supervisor-card supervisor-card team-builder-card team-builder-card calculator-card calculator-card"
       "supervisor-card supervisor-card karma-card karma-card calculator-card calculator-card"
       ". . karma-card karma-card . .";
+  }
+
+  .supervisor-card .card-img,
+  .karma-card .card-img {
+    transform: translateY(0);
   }
 }
