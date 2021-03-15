@@ -38,6 +38,10 @@ p {
 .container {
   width: 300px;
   margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .text-container {
@@ -66,7 +70,6 @@ p {
 }
 
 .card {
-  width: 100%;
   padding: 1.25rem 1.5625rem 0 1.5625rem;
   box-shadow: 0px 10px 45px -20px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
@@ -95,4 +98,48 @@ p {
 .calculator-card {
   grid-area: calculator-card;
   border-top: solid 0.25rem var(--blue-color);
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 37.5rem;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 25px 25px;
+    grid-template-areas:
+      "supervisor-card supervisor-card team-builder-card team-builder-card"
+      "supervisor-card supervisor-card team-builder-card team-builder-card"
+      "karma-card karma-card calculator-card calculator-card"
+      "karma-card karma-card calculator-card calculator-card";
+  }
+
+  .card {
+    padding-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: 62.5rem;
+  }
+
+  .text-container {
+    width: 31.25rem;
+  }
+
+  .text-container .titles {
+    font-size: 1.5rem;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      ". . team-builder-card team-builder-card . ."
+      "supervisor-card supervisor-card team-builder-card team-builder-card calculator-card calculator-card"
+      "supervisor-card supervisor-card karma-card karma-card calculator-card calculator-card"
+      ". . karma-card karma-card . .";
+  }
 }
