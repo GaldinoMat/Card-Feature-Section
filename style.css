@@ -103,6 +103,7 @@ p {
 @media (min-width: 768px) {
   .container {
     width: 37.5rem;
+    margin: 1.5625rem 0;
   }
 
   .cards-container {
